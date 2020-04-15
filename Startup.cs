@@ -26,23 +26,23 @@ namespace HelloWeb
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();    // Useful developer crash info
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Error");  // Non developer crash info
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseHttpsRedirection();              // Use https
+            app.UseStaticFiles();                   // Uses the static files
 
-            app.UseRouting();
+            app.UseRouting();                       // Allows ASP.Net to respond to request appropriately
 
-            app.UseAuthorization();
+            app.UseAuthorization();                 // Allows for use of authorization techniques
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints =>           // Draws the lines between the pages
             {
                 endpoints.MapRazorPages();
             });
